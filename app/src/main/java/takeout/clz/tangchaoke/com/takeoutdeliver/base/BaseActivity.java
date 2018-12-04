@@ -1,4 +1,4 @@
-package takeout.clz.tangchaoke.com.takeoutdeliver.base;
+﻿package takeout.clz.tangchaoke.com.takeoutdeliver.base;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.kongzue.dialog.v2.DialogSettings;
 import com.leo.utils.LogUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -26,7 +25,6 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.zhy.autolayout.config.AutoLayoutConifg;
-
 import javax.inject.Inject;
 import takeout.clz.tangchaoke.comm.commutils.StatusBarUtils;
 import takeout.clz.tangchaoke.com.takeoutdeliver.R;
