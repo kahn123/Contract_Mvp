@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/ll_personal"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_back"
+        android:layout_width="match_parent"
+        android:layout_height="92px"
+        android:background="#383635">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="92px"
+            android:layout_height="92px"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@mipmap/back_white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/account_info"
+            android:textColor="@color/white"
+            android:textSize="32px"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10px"
+        android:background="@color/result_minor_text"/>
+
+    <!-- 头像 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/head"
+            android:layout_marginLeft="20px"
+            android:textColor="@color/home_text_black"
+            android:textSize="28px"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/sdv_head"
+            android:layout_width="60dp"
+            android:layout_centerVertical="true"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@+id/iv_gray_go"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/iv_head"
+           />
+        <ImageView
+            android:id="@+id/iv_gray_go"
+            android:layout_marginLeft="10px"
+            android:scaleType="center"
+            android:layout_marginRight="20px"
+            android:src="@mipmap/gray_go"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/result_minor_text"/>
+
+    <!-- 姓名 -->
+    <RelativeLayout
+        android:id="@+id/ll_name"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:gravity="center_vertical"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:textColor="@color/home_text_black"
+            android:textSize="28px"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/font_color_grey"
+            android:textSize="28px"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/result_minor_text"/>
+
+    <!-- 登录手机号 -->
+    <RelativeLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:gravity="center_vertical"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_phone"
+            android:textColor="@color/home_text_black"
+            android:textSize="28px"/>
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textColor="@color/font_color_grey"
+            android:textSize="28px"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/result_minor_text"/>
+
+    <!-- 我的邀请码 -->
+    <RelativeLayout
+        android:id="@+id/rl_invitation_code"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:gravity="center_vertical"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_invitation_code"
+            android:textColor="@color/home_text_black"
+            android:textSize="28px"/>
+
+        <TextView
+            android:id="@+id/tv_invitation_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textColor="@color/font_color_grey"
+            android:textSize="28px"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/result_minor_text"/>
+
+</LinearLayout>

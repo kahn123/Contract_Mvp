@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_wallet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/Title_Style"
+            android:layout_alignParentTop="true"
+            android:background="#383635">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="92px"
+                android:layout_height="92px"
+                android:scaleType="center"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/back_white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/forget_pwd"
+                android:textColor="@color/white"
+                android:textSize="32px"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/EditTextStyle"
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_marginTop="@dimen/view_40_dip"
+            android:layout_toRightOf="@+id/iv_1"
+            android:background="@drawable/shape_et_bg"
+            android:hint="@string/register_phone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/view_10_dip"
+            android:singleLine="true"
+            android:textColor="@color/home_text_black"
+            android:textColorHint="@color/home_text_gray"
+            android:textSize="28px"/>
+
+        <RelativeLayout
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_marginTop="@dimen/view_10_dip"
+            android:background="@drawable/shape_et_bg"
+            android:paddingRight="@dimen/view_10_dip">
+
+            <EditText
+                android:id="@+id/et_code"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="88px"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/btn_send_code"
+                android:hint="@string/register_code"
+                android:inputType="number"
+                android:paddingLeft="@dimen/view_10_dip"
+                android:singleLine="true"
+                android:maxLength="10"
+                android:textColor="@color/home_text_black"
+                android:textColorHint="@color/home_text_gray"
+                android:textSize="28px"/>
+
+            <Button
+                android:id="@+id/btn_send_code"
+                android:layout_width="180px"
+                android:layout_height="60px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/send_code_btn"
+                android:enabled="true"
+                android:text="@string/send_code"
+                android:textColor="@color/white"
+                android:textSize="24px"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_psw_first"
+            style="@style/EditTextStyle"
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_marginTop="@dimen/view_10_dip"
+            android:layout_toRightOf="@+id/iv_1"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+            android:background="@drawable/shape_et_bg"
+            android:hint="@string/new_psw"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/view_10_dip"
+            android:singleLine="true"
+            android:textColor="@color/home_text_black"
+            android:textColorHint="@color/home_text_gray"
+            android:textSize="28px"/>
+
+        <EditText
+            android:id="@+id/et_psw_second"
+            style="@style/EditTextStyle"
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_marginTop="@dimen/view_10_dip"
+            android:layout_toRightOf="@+id/iv_1"
+            android:background="@drawable/shape_et_bg"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+            android:hint="@string/confirm_psw"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/view_10_dip"
+            android:singleLine="true"
+            android:textColor="@color/home_text_black"
+            android:textColorHint="@color/home_text_gray"
+            android:textSize="28px"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="660px"
+            android:layout_height="82px"
+            android:layout_below="@+id/ll_income"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/view_100_dip"
+            android:background="@drawable/login_btn2"
+            android:enabled="true"
+            android:text="@string/confirm_modify"
+            android:textColor="@color/white"
+            android:textSize="28px"/>
+
+    </LinearLayout>
+
+</LinearLayout>

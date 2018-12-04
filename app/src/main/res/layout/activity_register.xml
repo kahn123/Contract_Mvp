@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="92px"
+            android:background="#383635">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="92px"
+                android:layout_height="92px"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@mipmap/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                android:textSize="32px" />
+        </RelativeLayout>
+
+        <!--请输入手机号-->
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/EditTextStyle"
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_marginTop="@dimen/view_40_dip"
+            android:layout_toRightOf="@+id/iv_1"
+            android:background="@drawable/shape_et_bg"
+            android:hint="@string/register_phone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/view_10_dip"
+            android:singleLine="true"
+            android:textColor="@color/home_text_black"
+            android:textColorHint="@color/home_text_gray"
+            android:textCursorDrawable="@drawable/my_cursor"
+            android:textSize="28px" />
+
+        <!--请输入验证码-->
+        <RelativeLayout
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_marginTop="@dimen/view_10_dip"
+            android:background="@drawable/shape_et_bg"
+            android:paddingRight="@dimen/view_10_dip">
+
+            <EditText
+                android:id="@+id/et_code"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="88px"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/btn_send_code"
+                android:hint="@string/register_code"
+                android:inputType="number"
+                android:paddingLeft="@dimen/view_10_dip"
+                android:singleLine="true"
+                android:maxLength="10"
+                android:textColor="@color/home_text_black"
+                android:textColorHint="@color/home_text_gray"
+                android:textCursorDrawable="@drawable/my_cursor"
+                android:textSize="28px" />
+
+            <Button
+                android:id="@+id/btn_send_code"
+                android:layout_width="172px"
+                android:layout_height="60px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/send_code_btn"
+                android:enabled="true"
+                android:text="@string/send_code"
+                android:textColor="@color/white"
+                android:textSize="24px" />
+        </RelativeLayout>
+
+        <!--输入密码-->
+        <EditText
+            android:id="@+id/et_psw_first"
+            style="@style/EditTextStyle"
+            android:layout_width="660px"
+            android:layout_height="88px"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/view_10_dip"
+            android:background="@drawable/shape_et_bg"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/view_10_dip"
+            android:singleLine="true"
+            android:maxLength="20"
+            android:textColor="@color/home_text_black"
+            android:textColorHint="@color/home_text_gray"
+            android:textCursorDrawable="@drawable/my_cursor"
+            android:textSize="28px" />
+
+        <!--下一步-->
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="660px"
+            android:layout_height="82px"
+            android:layout_below="@+id/ll_income"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180px"
+            android:background="@drawable/login_btn2"
+            android:enabled="true"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="28px" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90px">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_i_have_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/selected_small"
+                android:drawablePadding="10px"
+                android:gravity="center_vertical"
+                android:text="我已阅读并同意"
+                android:textSize="26px" />
+
+            <TextView
+                android:id="@+id/tv_the_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:gravity="center"
+                android:text="@string/service_agreement"
+                android:textColor="@color/color_4C80E3"
+                android:textSize="26px" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+

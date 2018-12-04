@@ -1,0 +1,74 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url  "http://dl.bintray.com/nuptboyzhb/maven"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url  "http://dl.bintray.com/nuptboyzhb/maven"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    multidex = '1.0.3'
+
+    //Support Libraries
+    support = '27.1.1'
+
+    //Injection
+    dagger = '2.16'
+    butterKnife = '8.8.1'
+
+    //http
+    retrofit = '2.4.0'
+    okHttp = '3.10.0'
+
+    //Rxjava
+    rxJava = '2.1.12'
+    rxAndroid = '2.0.2'
+    rxLifeCycle = '2.2.1'
+    rxBinding = '2.1.1'
+    rxpermissions = '0.9.5@aar'
+
+    //image
+    glide = '4.6.1'
+
+    //Json
+    gson = '2.8.2'
+
+    //db
+    realm = '5.1.0'
+
+    //jiguang plugin
+    jiguangPlugin = '3.1.1'
+
+    //aac
+    lifecycle = '1.1.1'
+}

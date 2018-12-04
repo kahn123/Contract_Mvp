@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_review"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:orientation="vertical">
+
+        <!--title-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="92px"
+            android:background="#383635">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="92px"
+                android:layout_height="92px"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@mipmap/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/review"
+                android:textColor="@color/white"
+                android:textSize="32px" />
+        </RelativeLayout>
+
+        <takeout.clz.tangchaoke.com.takeoutdeliver.comm.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_submit"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="24px"
+                    android:paddingRight="24px">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="88px">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:hint="@string/real_name"
+                            android:singleLine="true"
+                            android:textColor="@color/home_text_black"
+                            android:textColorHint="@color/home_text_gray"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/primary_light" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="88px">
+
+                        <EditText
+                            android:id="@+id/et_id_card"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:hint="@string/id_card"
+                            android:maxLength="18"
+                            android:singleLine="true"
+                            android:textColor="@color/home_text_black"
+                            android:textColorHint="@color/home_text_gray"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="24px"
+                    android:paddingRight="24px">
+
+                    <!--配送身份-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92px"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/deliver_identity"
+                            android:textColor="@color/home_text_black"
+                            android:textSize="14dp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <RadioButton
+                                android:id="@+id/rb_class1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                android:background="@null"
+                                android:button="@drawable/radiobutton"
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="10px"
+                                android:text="@string/social_capacity"
+                                android:textColor="@color/home_text_black"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <RadioButton
+                                android:id="@+id/rb_class2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:background="@null"
+                                android:button="@drawable/radiobutton"
+                                android:checked="true"
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="10px"
+                                android:text="@string/the_feast_capacity"
+                                android:textColor="@color/home_text_black"
+                                android:textSize="14dp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/primary_light" />
+
+                    <!--配送工具-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92px"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/deliver_vehicle"
+                            android:textColor="@color/home_text_black"
+                            android:textSize="14dp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_tool"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <RadioButton
+                                android:id="@+id/rb_tool1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                android:background="@null"
+                                android:button="@drawable/radiobutton"
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="10px"
+                                android:text="@string/electric_car"
+                                android:textColor="@color/home_text_black"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <RadioButton
+                                android:id="@+id/rb_tool2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                android:background="@null"
+                                android:button="@drawable/radiobutton"
+                                android:checked="true"
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="10px"
+                                android:text="@string/car"
+                                android:textColor="@color/home_text_black"
+                                android:textSize="14dp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/primary_light" />
+                    <!--所在地区-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="88px">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/at_the_loc"
+                            android:textColor="@color/home_text_black"
+                            android:textSize="14dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_select_loc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:drawablePadding="10px"
+                            android:drawableRight="@mipmap/gray_go"
+                            android:gravity="center"
+                            android:maxLength="20"
+                            android:text="@string/please_select"
+                            android:textColor="@color/home_text_gray"
+                            android:textSize="14dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--身份证-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginTop="20px"
+                    android:text="@string/review_first"
+                    android:textColor="@color/home_text_black"
+                    android:textSize="24px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="24px"
+                    android:paddingRight="24px"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="366px"
+                        android:layout_weight="1"
+                        android:paddingLeft="24px"
+                        android:paddingRight="24px">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="232px"
+                            android:layout_marginTop="38px"
+                            android:background="@color/background_color">
+
+                            <ImageView
+                                android:layout_width="106px"
+                                android:layout_height="106px"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/idcart_little" />
+
+                            <ImageView
+                                android:id="@+id/id_card_front"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_left"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20px"
+                            android:text="@string/id_front"
+                            android:textColor="@color/home_text_gray"
+                            android:textSize="28px" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="366px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:paddingLeft="24px"
+                        android:paddingRight="24px">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_right"
+                            android:layout_width="match_parent"
+                            android:layout_height="232px"
+                            android:layout_marginTop="38px"
+                            android:background="@color/background_color">
+
+                            <ImageView
+                                android:layout_width="106px"
+                                android:layout_height="106px"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/idcart_little" />
+
+                            <ImageView
+                                android:id="@+id/id_card_back"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_right"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20px"
+                            android:text="@string/id_reverse"
+                            android:textColor="@color/home_text_gray"
+                            android:textSize="28px" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!--身份证提示-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginRight="24px"
+                    android:layout_marginTop="20px"
+                    android:background="@color/review_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="30px"
+                    android:text="@string/review_1"
+                    android:textColor="@color/home_text_gray"
+                    android:textSize="24px" />
+
+                <!--手持身份证-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginTop="20px"
+                    android:text="@string/review_second"
+                    android:textColor="@color/home_text_black"
+                    android:textSize="24px" />
+
+                <!--手持身份证图片-->
+                <RelativeLayout
+                    android:id="@+id/rl_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="530px"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:layout_width="224px"
+                        android:layout_height="224px"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/id_card_large" />
+
+                    <ImageView
+                        android:id="@+id/id_card_person"
+                        android:layout_width="642px"
+                        android:layout_height="488px"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <!--手持身份证提示-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginRight="24px"
+                    android:layout_marginTop="20px"
+                    android:background="@color/review_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="30px"
+                    android:text="@string/review_2"
+                    android:textColor="@color/home_text_gray"
+                    android:textSize="24px" />
+
+                <!--驾驶证-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginTop="20px"
+                    android:text="@string/review_third"
+                    android:textColor="@color/home_text_black"
+                    android:textSize="24px" />
+
+                <!--驾驶证图片-->
+                <RelativeLayout
+                    android:id="@+id/rl_driving_licence"
+                    android:layout_width="match_parent"
+                    android:layout_height="530px"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="224px"
+                        android:layout_height="224px"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/id_card_large" />
+
+                    <ImageView
+                        android:id="@+id/id_driving_licence"
+                        android:layout_width="642px"
+                        android:layout_height="488px"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <!--驾驶证提示-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginRight="24px"
+                    android:layout_marginTop="20px"
+                    android:background="@color/review_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="30px"
+                    android:text="@string/review_3"
+                    android:textColor="@color/home_text_gray"
+                    android:textSize="24px" />
+
+                <!--行驶证-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginTop="20px"
+                    android:text="@string/review_fourth"
+                    android:textColor="@color/home_text_black"
+                    android:textSize="24px" />
+
+                <!--行驶证图片-->
+                <RelativeLayout
+                    android:id="@+id/rl_driving_licence2"
+                    android:layout_width="match_parent"
+                    android:layout_height="530px"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:layout_width="224px"
+                        android:layout_height="224px"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/id_card_large" />
+
+                    <ImageView
+                        android:id="@+id/id_driving_licence2"
+                        android:layout_width="642px"
+                        android:layout_height="488px"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <!--行驶证提示-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60px"
+                    android:layout_marginBottom="150px"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginRight="24px"
+                    android:layout_marginTop="20px"
+                    android:background="@color/review_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="30px"
+                    android:text="@string/review_3"
+                    android:textColor="@color/home_text_gray"
+                    android:textSize="24px" />
+            </LinearLayout>
+        </takeout.clz.tangchaoke.com.takeoutdeliver.comm.MyScrollView>
+    </LinearLayout>
+
+    <!--提交审核-->
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/submit_btn"
+        android:gravity="center"
+        android:text="@string/submit_to_review"
+        android:textColor="@color/white"
+        android:textSize="28px" />
+</RelativeLayout>

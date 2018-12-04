@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?><!--任务大厅待接单订单详情-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_wallet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true">
+
+    <!--title-->
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="92px"
+        android:background="#383635">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="92px"
+            android:layout_height="92px"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@mipmap/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/order_detail"
+            android:textColor="@color/white"
+            android:textSize="32px" />
+    </RelativeLayout>
+
+
+
+        <takeout.clz.tangchaoke.com.takeoutdeliver.comm.MultiStateView
+            android:id="@+id/mStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:msv_animateViewChanges="false"
+            app:msv_emptyView="@layout/view_empty"
+            app:msv_errorView="@layout/view_error"
+            app:msv_loadingView="@layout/view_loading"
+            app:msv_viewState="loading">
+            <!--立即接单按钮-->
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/myScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/rl_bottom"
+                android:layout_below="@+id/rl_title"
+                android:paddingBottom="20px"
+                android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/ll_order_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20px"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="24px">
+
+                    <!--餐号-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="88px"
+                            android:layout_height="88px"
+                            android:layout_marginRight="20px"
+                            android:src="@mipmap/order_num" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_order_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="餐号接单后可显示"
+                                android:textColor="@color/black"
+                                android:textSize="32px" />
+
+                            <TextView
+                                android:id="@+id/tv_arrive_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8px"
+                                android:text=""
+                                android:textColor="@color/blue_3d8ec1"
+                                android:textSize="26px" />
+
+                            <TextView
+                                android:id="@+id/tv_expect_arrive_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8px"
+                                android:textColor="@color/blue_3d8ec1"
+                                android:textSize="26px" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_box_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/color_333333"
+                            android:textSize="34px" />
+                    </LinearLayout>
+
+                    <!--收入-->
+                    <RelativeLayout
+                        android:id="@+id/rl_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="108px">
+
+                        <TextView
+                            android:id="@+id/tv_income_prefix"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="收入:"
+                            android:textColor="@color/home_text_black"
+                            android:textSize="24px" />
+
+                        <TextView
+                            android:id="@+id/tv_income"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8px"
+                            android:layout_toRightOf="@id/tv_income_prefix"
+                            android:text=""
+                            android:textColor="@color/price_color"
+                            android:textSize="44px"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_attach_service"
+                            android:layout_width="80px"
+                            android:layout_height="50px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/tv_attach_service"
+                                android:layout_width="20px"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:scaleType="center"
+                                android:src="@mipmap/service_down" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/tv_income1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="108px"
+                        android:text=""
+                        android:visibility="gone"
+                        android:textColor="@color/price_color"
+                        android:textSize="44px"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_attach_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="24px"
+                    android:paddingLeft="24px"
+                    android:paddingTop="24px">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="60px"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/qu" />
+
+                        <TextView
+                            android:id="@+id/tv_mct_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10px"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLength="15"
+                            android:textColor="@color/black"
+                            android:textSize="32px" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_mct_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70px"
+                        android:text=""
+                        android:textColor="@color/home_text_mid"
+                        android:textSize="24px" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginBottom="24px"
+                        android:layout_marginTop="24px"
+                        android:src="@color/primary_light" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="60px"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/shou" />
+
+                        <TextView
+                            android:id="@+id/tv_consignee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10px"
+                            android:gravity="center_vertical"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="32px" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70px"
+                        android:text=""
+                        android:textColor="@color/home_text_mid"
+                        android:textSize="24px" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:src="@color/primary_light" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="20px">
+
+                    <TextView
+                        android:id="@+id/tv_navigation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@mipmap/navi_icon"
+                        android:drawablePadding="10px"
+                        android:gravity="center"
+                        android:text="地图导航"
+                        android:textColor="@color/black"
+                        android:textSize="34px" />
+                </RelativeLayout>
+
+                <!--买家备注-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="88px"
+                    android:paddingLeft="24px"
+                    android:paddingRight="24px"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_remarks_prefix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/remarks"
+                        android:textColor="@color/home_text_black"
+                        android:textSize="24px" />
+
+                    <TextView
+                        android:id="@+id/tv_remarks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/tv_remarks_prefix"
+                        android:text="无"
+                        android:textColor="@color/home_text_gray"
+                        android:textSize="24px" />
+
+                </RelativeLayout>
+
+                <!--店铺名称-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20px"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="24px"
+                    android:paddingRight="24px">
+
+                    <TextView
+                        android:id="@+id/tv_store_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16px"
+                        android:paddingBottom="16px"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="店铺名称"
+                        android:textColor="@color/home_text_black"
+                        android:textSize="28px"
+                        android:maxLength="15"
+                        android:ellipsize="end"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:src="@color/primary_light" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_dishes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <!-- <android.support.v7.widget.RecyclerView
+                         android:id="@+id/rv_dishes_combo"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:visibility="visible" />-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/lv_dishes_combo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:scrollbars="none" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24px"
+                    android:layout_marginTop="8px"
+                    android:text="@string/note"
+                    android:textColor="@color/note_color"
+                    android:textSize="20px"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_cancel_order"
+                    android:layout_width="714px"
+                    android:layout_height="88px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20px"
+                    android:background="@drawable/red_to_gray_btn"
+                    android:gravity="center"
+                    android:text="@string/cancel_order"
+                    android:textColor="@color/white"
+                    android:textSize="28px"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </takeout.clz.tangchaoke.com.takeoutdeliver.comm.MultiStateView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_take_order"
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:background="@drawable/large_btn"
+            android:gravity="center"
+            android:text="@string/take_order_now"
+            android:textColor="@color/white"
+            android:textSize="32px" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--使按钮圆角化-->
+    <corners android:radius="72px"></corners>
+    <stroke android:color="@color/color_C9AC51" android:width="@dimen/com_size_0001dp"/>
+</shape>

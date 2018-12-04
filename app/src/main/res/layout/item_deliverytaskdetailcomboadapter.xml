@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="16px">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16px">
+
+        <View
+            android:layout_width="10px"
+            android:layout_height="10px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/dot" />
+
+        <TextView
+            android:id="@+id/tv_dish_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="套餐"
+            android:textColor="@color/color_333333"
+            android:textSize="28px"
+            android:maxEms="8"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:layout_width="14px"
+            android:layout_height="10px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10px"
+            android:layout_toRightOf="@id/tv_dish_name"
+            android:src="@mipmap/ic_triangle_black" />
+
+        <TextView
+            android:id="@+id/tv_dish_price"
+            android:layout_width="240px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:textColor="@color/color_333333"
+            android:textSize="28px" />
+
+        <TextView
+            android:id="@+id/tv_dish_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20px"
+            android:layout_toLeftOf="@id/tv_dish_price"
+            android:textColor="@color/color_333333"
+            android:textSize="28px" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+
+        android:layout_marginTop="16px"
+        android:background="@color/primary_light" />
+
+    <takeout.clz.tangchaoke.com.takeoutdeliver.comm.NoScrollListView
+        android:id="@+id/lv_combo_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:dividerHeight="2px"
+        android:scrollbars="none" />
+</LinearLayout>

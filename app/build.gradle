@@ -1,0 +1,192 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "takeout.clz.tangchaoke.com.takeoutdeliver"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk { abiFilters "armeabi", "armeabi-v7a", "x86", 'x86_64' }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "c8033649ea57d8432b15d152",
+                JPUSH_CHANNEL: "developer-default",
+        ]
+        //dialog配置
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true    // Enable RS support
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        cyw { dimension "default" }
+        qihu360 { dimension "default" }
+        huawei { dimension "default" }
+        xiaomi { dimension "default" }
+        yingyongbao { dimension "default" }
+        vivo { dimension "default" }
+        oppo { dimension "default" }
+        wandoujia { dimension "default" }
+        samsung { dimension "default" }
+        meizu { dimension "default" }
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        debug {
+            storeFile file('../keystore.jks')
+            storePassword "tangchaoke"
+            keyAlias "hrhj"
+            keyPassword "tangchaoke"
+        }
+        release {
+            storeFile file('../keystore.jks')
+            storePassword "tangchaoke"
+            keyAlias "hrhj"
+            keyPassword "tangchaoke"
+        }
+    }
+
+    buildToolsVersion '27.0.3'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //data数据
+    implementation project(path: ':data')
+
+    //工具类
+    implementation project(path: ':comm')
+
+    //support
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.support}"
+    implementation "com.android.support:design:${rootProject.ext.support}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.support}"
+    implementation "com.android.support:cardview-v7:${rootProject.ext.support}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    //AAC
+    implementation "android.arch.lifecycle:runtime:${rootProject.ext.lifecycle}"
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.lifecycle}"
+    implementation "android.arch.lifecycle:common-java8:${rootProject.ext.lifecycle}"
+    annotationProcessor "android.arch.lifecycle:compiler:${rootProject.ext.lifecycle}"
+
+    //test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroid}"
+
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:${rootProject.ext.okHttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.okHttp}"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:converter-scalars:${rootProject.ext.retrofit}"
+
+    //rxbinding
+    implementation "com.jakewharton.rxbinding2:rxbinding:${rootProject.ext.rxBinding}"
+    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:${rootProject.ext.rxBinding}"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${rootProject.ext.rxBinding}"
+    implementation "com.jakewharton.rxbinding2:rxbinding-design:${rootProject.ext.rxBinding}"
+    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rootProject.ext.rxBinding}"
+
+    //rxlifecycle
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:${rootProject.ext.rxLifeCycle}"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-android:${rootProject.ext.rxLifeCycle}"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:${rootProject.ext.rxLifeCycle}"
+
+    //dagger
+    implementation "com.google.dagger:dagger:${rootProject.ext.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger}"
+    implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger}"
+    implementation "com.google.dagger:dagger-android-support:${rootProject.ext.dagger}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger}"
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+
+    //butterKnife
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnife}"
+
+    //jiguang
+    implementation 'cn.jiguang.sdk:jpush:3.1.5'
+
+    // 此处以JPush 3.1.1 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.2.3'
+
+//     此处以JCore 1.1.9 版本为例。
+//    implementation 'cn.jiguang.sdk.plugin:xiaomi:3.1.1'
+//    implementation 'cn.jiguang.sdk.plugin:huawei:3.1.1'
+//    implementation 'cn.jiguang.sdk.plugin:meizu:3.1.1'
+
+    //umeng
+    implementation 'com.umeng.sdk:common:1.5.3'
+    implementation 'com.umeng.sdk:analytics:7.5.0'
+    implementation 'com.umeng.sdk:utdid:1.1.5.3'
+
+    //评分控件https://github.com/everhad/AndroidRatingStar
+    implementation 'com.github.everhad:AndroidRatingStar:v1.0.1'
+
+    //PictureSelector https://github.com/LuckSiege/PictureSelector
+    implementation('com.github.LuckSiege.PictureSelector:picture_library:v2.2.3') {
+        exclude group: "com.github.bumptech.glide"
+    }
+
+    //https://github.com/Bakumon/StatusLayoutManager空布局页面
+    implementation 'com.github.Bakumon:StatusLayoutManager:1.0.4'
+
+    //Dialog https://github.com/kongzue/Dialog
+    implementation 'com.kongzue.dialog:dialog:2.2.9'
+
+    //cityselect城市选择 https://github.com/crazyandcoder/citypicker
+    implementation 'liji.library.dev:citypickerview:3.1.8'
+
+    //imageview https://github.com/hdodenhof/CircleImageView
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.github.firelion0725:MyUtils:v1.1.1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    implementation('com.github.bumptech.glide:glide:4.7.1') {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.just.agentweb:agentweb:4.0.2' // (必选)
+    implementation 'com.just.agentweb:download:4.0.2' // (可选)
+    implementation 'com.just.agentweb:filechooser:4.0.2'// (可选)
+
+
+    implementation 'com.zhy:autolayout:1.4.3'
+    implementation 'com.facebook.fresco:fresco:0.12.0'
+
+//    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
+        implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+
+
+
+
+
+}

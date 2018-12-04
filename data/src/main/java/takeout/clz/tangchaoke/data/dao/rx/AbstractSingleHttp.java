@@ -1,0 +1,17 @@
+package takeout.clz.tangchaoke.data.dao.rx;
+
+import io.reactivex.SingleObserver;
+import io.reactivex.disposables.Disposable;
+
+/**
+ * @author leo, ZhangWei,XiaoFeng
+ * @date 2018/4/8
+ * @function
+ */
+public abstract class AbstractSingleHttp<T> implements SingleObserver<T> {
+
+    @Override
+    public void onSubscribe(Disposable d) {
+
+    }
+}

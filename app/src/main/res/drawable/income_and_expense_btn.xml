@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/com_size_0006dp"/>
+            <solid
+                android:color="@color/transparent"/>
+            <stroke
+                android:width="@dimen/com_size_0002dp"
+                android:color="@color/btn_normal"/>
+            <size android:width="@dimen/com_size_0600dp" android:height="@dimen/com_size_0084dp"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/com_size_0006dp"/>
+            <solid
+                android:color="@color/transparent"/>
+            <stroke
+                android:width="@dimen/com_size_0002dp"
+                android:color="@color/btn_pressed"/>
+            <size android:width="@dimen/com_size_0600dp" android:height="@dimen/com_size_0084dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/com_size_0006dp"/>
+            <solid
+                android:color="@color/transparent"/>
+            <stroke
+                android:width="@dimen/com_size_0002dp"
+                android:color="@color/login_btn_color"/>
+            <size android:width="@dimen/com_size_0600dp" android:height="@dimen/com_size_0084dp"/>
+        </shape>
+    </item>
+</selector>
