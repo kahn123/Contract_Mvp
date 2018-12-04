@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/3/28
  * @function okHttp 单例
  */

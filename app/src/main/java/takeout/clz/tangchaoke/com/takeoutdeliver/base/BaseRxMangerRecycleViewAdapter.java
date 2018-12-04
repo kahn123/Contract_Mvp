@@ -8,7 +8,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/6/22
  */
 public abstract class BaseRxMangerRecycleViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> implements LifecycleObserver {

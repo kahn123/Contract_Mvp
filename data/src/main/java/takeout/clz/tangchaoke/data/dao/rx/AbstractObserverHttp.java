@@ -5,7 +5,7 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/3/28
  * @function
  */

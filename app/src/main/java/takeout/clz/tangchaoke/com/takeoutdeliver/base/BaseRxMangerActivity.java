@@ -4,7 +4,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/6/12
  */
 public abstract class BaseRxMangerActivity extends BaseLifeCycleActivity {

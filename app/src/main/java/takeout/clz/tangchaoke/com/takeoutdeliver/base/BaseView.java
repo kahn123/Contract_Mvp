@@ -5,7 +5,7 @@ import android.content.Context;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/4/19
  * @function
  */

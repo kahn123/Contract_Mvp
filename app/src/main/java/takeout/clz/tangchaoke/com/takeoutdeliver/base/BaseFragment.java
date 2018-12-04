@@ -33,7 +33,7 @@ import static com.kongzue.dialog.v2.DialogSettings.THEME_LIGHT;
 import static com.kongzue.dialog.v2.DialogSettings.TYPE_IOS;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/4/19
  * @function
  */

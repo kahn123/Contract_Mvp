@@ -1,7 +1,7 @@
 package takeout.clz.tangchaoke.com.takeoutdeliver.base;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/5/30
  */
 public abstract class BaseMvpPresenter<V extends BaseView> implements BasePresenter<V> {

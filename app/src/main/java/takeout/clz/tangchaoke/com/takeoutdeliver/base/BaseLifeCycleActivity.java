@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * 通过AAC的LifeCycle管理生命周期
  *
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/6/27
  */
 public abstract class BaseLifeCycleActivity extends BaseRxLifecycleActivity {

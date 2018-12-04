@@ -3,7 +3,7 @@ package takeout.clz.tangchaoke.com.takeoutdeliver.base;
 import com.umeng.analytics.MobclickAgent;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/6/13
  */
 public abstract class BaseAnalyticsAgentActivity extends BaseButterKnifeActivity {

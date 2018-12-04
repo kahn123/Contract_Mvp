@@ -6,7 +6,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/6/12
  */
 public abstract class BaseButterKnifeActivity extends BaseRxMangerActivity {

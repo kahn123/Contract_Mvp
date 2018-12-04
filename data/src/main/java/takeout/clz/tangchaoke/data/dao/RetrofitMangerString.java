@@ -7,7 +7,7 @@ import takeout.clz.tangchaoke.data.dao.tool.StringConverterFactory;
 /**
  * 类说明
  *
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/9/11
  */
 public class RetrofitMangerString {

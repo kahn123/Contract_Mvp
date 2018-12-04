@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import takeout.clz.tangchaoke.data.dao.tool.StringConverterFactory;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/3/28
  * @function retrofit单例
  */

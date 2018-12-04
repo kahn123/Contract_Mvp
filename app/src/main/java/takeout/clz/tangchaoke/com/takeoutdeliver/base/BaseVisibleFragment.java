@@ -3,7 +3,7 @@ package takeout.clz.tangchaoke.com.takeoutdeliver.base;
 import android.support.v4.app.Fragment;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/6/12
  */
 public abstract class BaseVisibleFragment extends Fragment {

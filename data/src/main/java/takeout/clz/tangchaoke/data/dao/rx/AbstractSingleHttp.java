@@ -4,7 +4,7 @@ import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/4/8
  * @function
  */

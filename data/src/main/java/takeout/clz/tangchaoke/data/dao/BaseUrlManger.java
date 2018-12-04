@@ -1,7 +1,7 @@
 package takeout.clz.tangchaoke.data.dao;
 
 /**
- * @author leo, ZhangWei,XiaoFeng
+ * @author leo, ZhangWei
  * @date 2018/3/28
  * @function url管理
  */
