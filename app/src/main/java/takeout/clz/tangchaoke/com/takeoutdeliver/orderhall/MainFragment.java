@@ -79,12 +79,12 @@ public class MainFragment extends MyBaseFragment implements DeliveryTaskFragment
             }
         });
 
-        RxViewUtils.throttleFirstView(ivMine, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivMine, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 drawer.openDrawer(GravityCompat.START);
             }
-        });
+        }));
 
     }
 

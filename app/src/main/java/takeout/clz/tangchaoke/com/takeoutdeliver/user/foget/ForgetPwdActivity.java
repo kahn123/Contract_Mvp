@@ -44,13 +44,13 @@ public class ForgetPwdActivity extends MyBaseActivity<ForgetPwdPresenterImpl> im
 
     @Override
     protected void initData() {
-        RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 finish();
             }
-        });
-        RxViewUtils.throttleFirstView(btnSendCode, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(btnSendCode, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 if (etPhone.getText().toString().trim().length() == 0) {
@@ -62,9 +62,9 @@ public class ForgetPwdActivity extends MyBaseActivity<ForgetPwdPresenterImpl> im
                     showDialog("加载中...");
                 }
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(btnNext, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(btnNext, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 if (etPhone.getText().toString().trim().length() == 0) {
@@ -84,7 +84,7 @@ public class ForgetPwdActivity extends MyBaseActivity<ForgetPwdPresenterImpl> im
                     showDialog("加载中...");
                 }
             }
-        });
+        }));
     }
 
     @Override

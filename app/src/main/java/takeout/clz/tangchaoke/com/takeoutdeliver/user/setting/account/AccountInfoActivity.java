@@ -51,19 +51,19 @@ public class AccountInfoActivity extends MyBaseActivity<AccountInfoPresenterImpl
 
     @Override
     protected void initData() {
-        RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 finish();
             }
-        });
-        RxViewUtils.throttleFirstView(sdvHead, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(sdvHead, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 selectDcimOrCamera();
 
             }
-        });
+        }));
     }
 
     /**

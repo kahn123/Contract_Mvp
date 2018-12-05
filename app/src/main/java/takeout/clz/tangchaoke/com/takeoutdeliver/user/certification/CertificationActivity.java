@@ -89,81 +89,81 @@ public class CertificationActivity extends MyBaseActivity<CertificationPresenter
     protected void initData() {
         String carriage_id = getIntent().getStringExtra("carriage_id");
         String token = getIntent().getStringExtra("token");
-        RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 finish();
 
             }
-        });
-        RxViewUtils.throttleFirstView(rl_left, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(rl_left, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 selectDcimOrCamera(0);
 
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstViewLong(rl_left, new RxViewUtils.CallBackLong() {
+        addSubscribe(RxViewUtils.throttleFirstViewLong(rl_left, new RxViewUtils.CallBackLong() {
             @Override
             public void onLongClick() {
                 checkPicture();
 
             }
-        });
-        RxViewUtils.throttleFirstView(rl_right, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(rl_right, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 selectDcimOrCamera(1);
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstViewLong(rl_right, new RxViewUtils.CallBackLong() {
+        addSubscribe(RxViewUtils.throttleFirstViewLong(rl_right, new RxViewUtils.CallBackLong() {
             @Override
             public void onLongClick() {
                 checkPicture();
             }
-        });
-        RxViewUtils.throttleFirstView(rl_person, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(rl_person, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 selectDcimOrCamera(2);
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstViewLong(rl_person, new RxViewUtils.CallBackLong() {
+        addSubscribe(RxViewUtils.throttleFirstViewLong(rl_person, new RxViewUtils.CallBackLong() {
             @Override
             public void onLongClick() {
                 checkPicture();
             }
-        });
-        RxViewUtils.throttleFirstView(rl_driving_licence, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(rl_driving_licence, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 selectDcimOrCamera(3);
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstViewLong(rl_driving_licence, new RxViewUtils.CallBackLong() {
+        addSubscribe(RxViewUtils.throttleFirstViewLong(rl_driving_licence, new RxViewUtils.CallBackLong() {
             @Override
             public void onLongClick() {
                 checkPicture();
             }
-        });
-        RxViewUtils.throttleFirstView(rl_driving_licence2, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(rl_driving_licence2, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 selectDcimOrCamera(4);
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstViewLong(rl_driving_licence2, new RxViewUtils.CallBackLong() {
+        addSubscribe(RxViewUtils.throttleFirstViewLong(rl_driving_licence2, new RxViewUtils.CallBackLong() {
             @Override
             public void onLongClick() {
                 checkPicture();
             }
-        });
-        RxViewUtils.throttleFirstView(btnSubmit, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(btnSubmit, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 try {
@@ -175,7 +175,7 @@ public class CertificationActivity extends MyBaseActivity<CertificationPresenter
                 }
 
             }
-        });
+        }));
     }
 
     @Override

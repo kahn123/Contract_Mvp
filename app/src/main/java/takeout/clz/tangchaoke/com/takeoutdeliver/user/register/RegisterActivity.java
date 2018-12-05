@@ -56,7 +56,7 @@ public class RegisterActivity extends MyBaseActivity<RegisterPresenterImpl> impl
 
     @Override
     protected void initData() {
-        RxViewUtils.throttleFirstView(btnSendCode, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(btnSendCode, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 if (etPhone.getText().toString().trim().length() == 0) {
@@ -68,10 +68,10 @@ public class RegisterActivity extends MyBaseActivity<RegisterPresenterImpl> impl
                     showDialog("加载中...");
                 }
             }
-        });
+        }));
 
 
-        RxViewUtils.throttleFirstView(btnNext, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(btnNext, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 if (etPhone.getText().toString().trim().length() == 0) {
@@ -91,15 +91,15 @@ public class RegisterActivity extends MyBaseActivity<RegisterPresenterImpl> impl
                     showDialog("加载中...");
                 }
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 finish();
             }
-        });
-        RxViewUtils.throttleFirstView(tv_i_have_agree, 800, TimeUnit.MILLISECONDS, new RxViewUtils.CallBack() {
+        }));
+        addSubscribe(RxViewUtils.throttleFirstView(tv_i_have_agree, 800, TimeUnit.MILLISECONDS, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 if (!isSelected) {
@@ -112,7 +112,7 @@ public class RegisterActivity extends MyBaseActivity<RegisterPresenterImpl> impl
                     isSelected = false;
                 }
             }
-        });
+        }));
     }
 
     @Override

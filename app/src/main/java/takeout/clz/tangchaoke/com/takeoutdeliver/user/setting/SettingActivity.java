@@ -59,7 +59,7 @@ public class SettingActivity extends MyBaseActivity<SettingPresenterImpl> implem
         mInvitationCode = getIntent().getStringExtra("mInvitationCode");
 
 
-        RxViewUtils.throttleFirstView(rl_account_info, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(rl_account_info, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 Intent intent = new Intent();
@@ -70,7 +70,7 @@ public class SettingActivity extends MyBaseActivity<SettingPresenterImpl> implem
                 intent.putExtra("mInvitationCode", mInvitationCode);
                 startActivity(intent);
             }
-        });
+        }));
 
         presenter.getCity();
 

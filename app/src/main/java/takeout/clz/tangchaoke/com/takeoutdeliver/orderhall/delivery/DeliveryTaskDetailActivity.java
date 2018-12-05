@@ -126,19 +126,19 @@ public class DeliveryTaskDetailActivity extends MyBaseActivity<DeliveryTaskDetai
 
 
 
-        RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 finish();
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(btnTakeOrder, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(btnTakeOrder, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 getAccept();
             }
-        });
+        }));
 
     }
 

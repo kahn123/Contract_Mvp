@@ -58,21 +58,21 @@ public class LoginActivity extends MyBaseActivity<LoginPresenterImpl> implements
 
     @Override
     protected void initData() {
-        RxViewUtils.throttleFirstView(tvForgetPsw, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(tvForgetPsw, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 startActivity(new Intent(LoginActivity.this, ForgetPwdActivity.class));
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(tvRegister, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(tvRegister, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(btnLogin, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(btnLogin, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 if (etPhone.getText().toString().trim().length() == 0) {
@@ -88,9 +88,9 @@ public class LoginActivity extends MyBaseActivity<LoginPresenterImpl> implements
 //                    showDialog("加载中...");
                 }
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(tvServicePhone, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(tvServicePhone, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 SelectDialog.show(LoginActivity.this, "提示", "请做出你的选择", "确定", new DialogInterface.OnClickListener() {
@@ -107,7 +107,7 @@ public class LoginActivity extends MyBaseActivity<LoginPresenterImpl> implements
                     }
                 });
             }
-        });
+        }));
 
     }
 

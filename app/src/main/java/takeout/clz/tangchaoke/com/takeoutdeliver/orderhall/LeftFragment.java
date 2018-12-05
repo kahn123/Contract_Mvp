@@ -75,14 +75,14 @@ public class LeftFragment extends MyBaseFragment<LeftPresenterImpl> implements L
 
     @Override
     protected void setupView() {
-        RxViewUtils.throttleFirstView(rl_wallet, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(rl_wallet, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
 //                startActivity(new Intent(getContext(), Activity_MyWallet.class).putExtra("cumulate_cash", cumulate_cash));
             }
-        });
+        }));
 
-        RxViewUtils.throttleFirstView(rl_settings, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(rl_settings, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 Intent intent = new Intent();
@@ -101,7 +101,7 @@ public class LeftFragment extends MyBaseFragment<LeftPresenterImpl> implements L
                 }
                 startActivity(intent);
             }
-        });
+        }));
 
 
 

@@ -68,13 +68,13 @@ public class MainActivity extends MyBaseActivity implements DeliveryTaskFragment
         }
         deliveryTaskFragment.setOnDataTransmissionListener(this);
         recoveryTaskFragment.setOnDataTransmissionListener(this);
-        RxViewUtils.throttleFirstView(fab, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(fab, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 goActivity(MyTaskActivity.class);
                 finish();
             }
-        });
+        }));
     }
 
     @Override

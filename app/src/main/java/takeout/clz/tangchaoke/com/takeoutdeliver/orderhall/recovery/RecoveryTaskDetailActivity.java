@@ -34,12 +34,12 @@ public class RecoveryTaskDetailActivity extends MyBaseActivity<RecoveryTaskDetai
         addressLat = getIntent().getStringExtra("addressLat");
         addressLng = getIntent().getStringExtra("addressLng");
 
-        RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
+        addSubscribe(RxViewUtils.throttleFirstView(ivBack, new RxViewUtils.CallBack() {
             @Override
             public void onClick() {
                 finish();
             }
-        });
+        }));
     }
 
     @Override
