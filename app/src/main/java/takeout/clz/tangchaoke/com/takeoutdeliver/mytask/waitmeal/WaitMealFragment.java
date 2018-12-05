@@ -15,6 +15,9 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import takeout.clz.tangchaoke.data.dao.cache.WaitMealCache;
 import takeout.clz.tangchaoke.data.dao.datadownbean.order.WaitMealDown;
 import takeout.clz.tangchaoke.data.dao.tool.ParameterString;
@@ -37,6 +40,7 @@ public class WaitMealFragment extends MyBaseFragment<WaitMealPresenterImpl> impl
         addLifeObserver(waitMealAdapter);
         waitMealAdapter.setDataCallBack(this::callBack);
         recyclerView.setAdapter(waitMealAdapter);
+
     }
 
     @Override
